@@ -92,6 +92,10 @@ namespace fwfw
         f.BackgroundImage = bitmap;
       };
 
+      f.MouseClick += (s, e) => {
+        Console.Out.WriteLine($"{e.Location.X}\t{e.Location.Y}");
+      };
+
       f.ShowDialog();
 
       return 0;

@@ -3,15 +3,19 @@
 fuwafuwa GUI tool kit for script environment.
 
 * fwfw は Zenity ライクなコマンドラインから呼び出すことができる簡単な GUI ツールキットです。
+  * Zenity との互換性はありません。
 * .NET Framework のみを利用しているため、バイナリサイズが非常に小さくて済みます。
+* 主に Windows 上で動作させることを目的とした、シェルスクリプトや mruby などの小さなスクリプト・ツールから呼び出すことを想定しています。
+  * より複雑なことをしたい方は、Zenity の Windows 版か Tcl/Tk を利用する選択肢があります。;-)
+    * さらに大規模なことをしたい方は、Qt や NW.js がおすすめです。
 
 ## Usage
 
-fwfw は次のコマンドによって起動します。
+    fwfw.exe [applet-name] [options] [arguments]
 
-    fwfw.exe [アプレット名] [オプション] [引数]
+## Applets
 
-### dialog ... ダイアログ
+### dialog ... ダイアログを表示する
 
 #### オプション
 
@@ -51,7 +55,7 @@ fwfw は次のコマンドによって起動します。
     fwfw.exe dialog --caption="質問" --icon=question --type=yesno "処理を実行しますか？"
       => yes
 
-###  openfile ... 「ファイルを開く」ダイアログ
+###  openfile ... 「ファイルを開く」ダイアログを表示する
 
 #### オプション
 
@@ -75,6 +79,42 @@ fwfw は次のコマンドによって起動します。
 
     fwfw.exe openfile --filter="DXF file(*.dxf)|.dxf|テキストファイル(*.txt)|.txt" --title="選択してください。"
       => C:\\Windows\\Temp\\foobar.txt
+
+### drawer ... 簡易プロッターを表示する
+
+#### オプション
+
+* --width=512 ... ウィンドウ(作画領域)の幅を指定します。
+* --height=512 ... ウィンドウ(作画領域)の高さを指定します。
+* --title="string" ... タイトル文字列を指定します。
+* --pensize=1.0 ... ペンのサイズを指定します。
+* --bgcolor=blue ... 背景色を指定します。
+* --fgcolor=white ... 前景色を指定します。
+
+#### 引数
+
+なし
+
+#### 結果
+
+* 終了コード ... 常に 0 を返します。
+* 標準出力 ... クリックした座標値のリストを改行で区切って印字します。
+
+#### 例
+
+    > type plot.txt
+      0.0000   0.0000
+    100.0000 100.0000
+     50.0000  80.0000
+
+    320.0000 160.0000
+    240.0000 160.0000
+    240.0000  80.0000
+
+    > fwfw.exe drawer --bgcolor=blue --fgcolor=white < plot.txt
+
+※プロットする作画情報は、標準入力に与えます。
+※改行までを一連のポリライン(線分集合)として描画します。
 
 ## Lisence
 
