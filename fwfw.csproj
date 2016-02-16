@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="applets\dialog.cs" />
     <Compile Include="applets\drawer.cs" />
+    <Compile Include="applets\savefile.cs" />
     <Compile Include="applets\openfile.cs" />
     <Compile Include="getopt.cs" />
     <Compile Include="Program.cs" />
