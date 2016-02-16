@@ -26,13 +26,13 @@ namespace fwfw
       d.FilterIndex = 0;
 
       d.DefaultExt = "";
-      if (opts.ContainsKey("defaultext")) {
-        d.DefaultExt = opts["defaultext"];
+      if (opts.ContainsKey("ext")) {
+        d.DefaultExt = opts["ext"];
       }
 
       d.FileName = "";
-      if (opts.ContainsKey("filename")) {
-        d.FileName = opts["filename"];
+      if (opts.ContainsKey("file")) {
+        d.FileName = opts["file"];
       }
 
       d.Filter = "";
@@ -52,8 +52,8 @@ namespace fwfw
       }
 
       d.InitialDirectory = "";
-      if (opts.ContainsKey("initialdir")) {
-        d.InitialDirectory = opts["initialdir"];
+      if (opts.ContainsKey("init")) {
+        d.InitialDirectory = opts["init"];
       }
 
       if (d.ShowDialog() != DialogResult.OK) {

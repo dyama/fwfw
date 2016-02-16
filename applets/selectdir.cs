@@ -16,17 +16,13 @@ namespace fwfw
     {
       FolderBrowserDialog d = new FolderBrowserDialog();
 
-      if (opts.ContainsKey("description")) {
-        d.Description = opts["description"];
-      }
+      d.Description = string.Join("\n", args.ToArray());
+
       if (opts.ContainsKey("selecteddir")) {
         d.SelectedPath = opts["selecteddir"];
       }
       if (opts.ContainsKey("newdir")) {
-        bool val;
-        if (bool.TryParse(opts["newdir"], out val)) {
-          d.ShowNewFolderButton = val;
-        }
+        d.ShowNewFolderButton = true;
       }
 
       if (d.ShowDialog() != DialogResult.OK) {
