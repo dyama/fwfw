@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="applets\dialog.cs" />
     <Compile Include="applets\selectcolor.cs" />
+    <Compile Include="applets\calender.cs" />
     <Compile Include="applets\selectdir.cs" />
     <Compile Include="applets\drawer.cs" />
     <Compile Include="applets\savefile.cs" />
