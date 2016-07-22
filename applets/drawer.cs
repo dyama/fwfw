@@ -93,8 +93,8 @@ namespace fwfw
       };
 
       f.MouseClick += (s, e) => {
-        var loc = f.PointToClient(e.Location);
-        Console.Out.WriteLine($"{e.Location.X}\t{e.Location.Y}");
+        // var loc = f.PointToClient(e.Location);
+        Console.Out.WriteLine("{e.Location.X}\t{e.Location.Y}");
       };
 
       f.Shown +=  (s, e) => {

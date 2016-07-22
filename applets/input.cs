@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Console;
 
 using OptsType = System.Collections.Generic.Dictionary<System.String, System.String>;
 using ArgsType = System.Collections.Generic.List<System.String>;
@@ -51,7 +50,7 @@ namespace fwfw
 
       f.ShowDialog();
 
-      Out.WriteLine(t.Text);
+      Console.Out.WriteLine(t.Text);
       return 0;
     }
   }
