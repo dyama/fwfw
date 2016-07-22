@@ -97,6 +97,15 @@ namespace fwfw
         Console.Out.WriteLine($"{e.Location.X}\t{e.Location.Y}");
       };
 
+      f.Shown +=  (s, e) => {
+        Bitmap bitmap = new Bitmap(f.ClientRectangle.Width, f.ClientRectangle.Height);
+        Graphics g = Graphics.FromImage(bitmap);
+        g.FillRectangle(new SolidBrush(bgcolor), f.ClientRectangle);
+        g.DrawPath(new Pen(fgcolor, pensize), gp);
+        g.Dispose();
+        f.BackgroundImage = bitmap;
+      };
+
       f.ShowDialog();
 
       return 0;
