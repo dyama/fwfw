@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>fwfw</RootNamespace>
     <AssemblyName>fwfw</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +51,7 @@
     <Compile Include="applets\notice.cs" />
     <Compile Include="applets\selectcolor.cs" />
     <Compile Include="applets\calender.cs" />
+    <Compile Include="applets\input.cs" />
     <Compile Include="applets\selectdir.cs" />
     <Compile Include="applets\drawer.cs" />
     <Compile Include="applets\savefile.cs" />
