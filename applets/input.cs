@@ -36,6 +36,9 @@ namespace fwfw
       t.Left = m;
       t.Top = l.Bottom;
       t.Width = f.ClientRectangle.Width - m;
+      if (opts.ContainsKey("password")) {
+        t.UseSystemPasswordChar = true;
+      }
       f.Controls.Add(t);
 
       Button ok = new Button();
