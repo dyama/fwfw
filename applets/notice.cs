@@ -50,7 +50,6 @@ namespace fwfw
       n.BalloonTipText = string.Join("\n", args.ToArray());
 
       n.Visible = true;
-      n.Icon = Properties.Resources.Icon1;
       n.ShowBalloonTip(ms);
 
       return 0;
